@@ -1,0 +1,85 @@
+{
+    "compétences": {
+      "Charge": {
+        "id": "0xA01",
+        "nom": "Charge!",
+        "profession": "Warrior",
+        "statistique": "Tactics",
+        "campagne": "Core",
+        "description": "Elite Shout. (5...11...13 seconds.) Allies in earshot move 33% faster. Initial effect: these allies lose the Crippled condition."
+      },
+      "Coward": {
+        "id": "0xA02",
+        "nom": "Coward!",
+        "profession": "Warrior",
+        "statistique": "Tactics",
+        "campagne": "Factions",
+        "description": "Elite Shout. Causes knock-down if target foe is moving."
+      },
+      "Victory_Is_Mine": {
+        "id": "0xA03",
+        "nom": "Victory Is Mine!",
+        "profession": "Warrior",
+        "statistique": "Tactics",
+        "campagne": "Prophecies",
+        "description": "Elite Shout. You gain 10...56...68 Health and 3...6...7 Energy for each condition on target foe."
+      },
+      "Youre_All_Alone": {
+        "id": "0xA04",
+        "nom": "You're All Alone!",
+        "profession": "Warrior",
+        "statistique": "Tactics",
+        "campagne": "Nightfall",
+        "description": "Elite Shout. Inflicts Cripple and Weakness conditions (8 seconds). No effect if target foe is near one of its allies."
+      },
+      "Auspicious_Parry": {
+        "id": "0xA05",
+        "nom": "Auspicious Parry",
+        "profession": "Warrior",
+        "statistique": "Tactics",
+        "campagne": "Factions",
+        "description": "Elite Stance. (8 seconds.) Blocks one attack. End effect: you gain 1...3...4 strike[s] of adrenaline."
+      },
+      "Backbreaker": {
+        "id": "0xA06",
+        "nom": "Backbreaker",
+        "profession": "Warrior",
+        "statistique": "Hammer Mastery",
+        "campagne": "Prophecies",
+        "description": "Elite Hammer Attack. Deals +1...16...20 damage. Causes knockdown. Knockdown lasts 4 seconds with Strength 8 or higher."
+      },
+      "Battle_Rage": {
+        "id": "0xA07",
+        "nom": "Battle Rage",
+        "profession": "Warrior",
+        "statistique": "Strength",
+        "campagne": "Core",
+        "description": "Elite Stance. (5...17...20 seconds.) You move 33% faster and gain double adrenaline from your attacks. Ends if you use any non-adrenal skills."
+      },
+      "Bulls_Charge": {
+        "id": "0xA08",
+        "nom": "Bull's Charge",
+        "profession": "Warrior",
+        "statistique": "Strength",
+        "campagne": "Prophecies",
+        "description": "Elite Stance. (5...10...11 seconds.) You move 33% faster. Causes knock-down if you hit a moving foe in melee. Ends if you use a skill."
+      },
+      "Charging_Strike": {
+        "id": "0xA09",
+        "nom": "Charging Strike",
+        "profession": "Warrior",
+        "statistique": "Strength",
+        "campagne": "Nightfall",
+        "description": "Elite Stance. (1...8...10 second[s].) You move 33% faster and deal +10...34...40 damage with your next melee hit. Ends when you hit or if you use a skill."
+      },
+      "Cleave": {
+        "id": "0xA10",
+        "nom": "Cleave",
+        "profession": "Warrior",
+        "statistique": "Axe Mastery",
+        "campagne": "Core",
+        "description": "Elite Axe Attack. Deals +10...26...30 damage."
+      }
+    }
+  }
+  

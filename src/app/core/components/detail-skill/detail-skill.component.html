@@ -1,0 +1,12 @@
+<div class="modal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close-button" (click)="closeModal()">×</span>
+    <div *ngIf="skill">
+      <h2>{{ skill.name }}</h2>
+      <p><strong>Profession:</strong> {{ skill.profession }}</p>
+      <p><strong>Attribute:</strong> {{ skill.statistic }}</p>
+      <p><strong>Campaign:</strong> {{ skill.campaign }}</p>
+      <p>{{ skill.description }}</p>
+    </div>
+  </div>
+</div>

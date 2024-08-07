@@ -1,0 +1,45 @@
+<div class="result-background">
+    <div class="input-field">
+      <input 
+        #searchBox 
+        (keyup)="search(searchBox.value)" 
+        placeholder="Rechercher une compétence"          
+      />
+    </div>
+    <table class="skill_list">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Profession</th>
+          <th>Attribut</th>
+          <th>Campagne</th>
+          <th>More</th>
+          <th>posseded</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of skills$ | async">
+          <td>{{ skill.name }}</td>
+          <td>{{ skill.profession }}</td>
+          <td>{{ skill.statistic }}</td>
+          <td>{{ skill.campaign }}</td>
+          <td (click)="openModal(skill)">...</td>
+          <td><input type="checkbox" value=""></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-button" (click)="closeModal()">×</span>
+      <div *ngIf="selectedSkill">
+        <h2>{{ selectedSkill.name }}</h2>
+        <p><strong>Profession:</strong> {{ selectedSkill.profession }}</p>
+        <p><strong>Attribute:</strong> {{ selectedSkill.statistic }}</p>
+        <p><strong>Campaign:</strong> {{ selectedSkill.campaign }}</p>
+        <p>{{ selectedSkill.description }}</p>
+      </div>
+    </div>
+  </div>
+  
