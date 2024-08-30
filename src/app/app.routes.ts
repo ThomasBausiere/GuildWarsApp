@@ -8,11 +8,22 @@ import { ListSkillComponent } from './core/components/list-skills/list-skills.co
 import { DetailSkillComponent } from './core/components/detail-skill/detail-skill.component';
 import { SearchResultComponent } from './shared/components/search-result/search-result.component';
 import { MainComponent } from './core/components/main/main.component';
+import { RessourcesComponent } from './features/ressources/ressources.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { 
+    path: '', redirectTo: '/home', pathMatch: 'full' 
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./features/auth/login/login.component').then (m => m.LoginComponent)
+  },
+  {
+    path: 'sign-up',
+    loadComponent: () => import('./features/auth/login/sign-up/sign-up.component').then (m => m.SignUpComponent)
+  },
   { path: 'home', component: HomepageComponent },
+  { path: 'ressources', component: RessourcesComponent },
   { path: 'create-character', component: CreateCharacterComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'overview', component: OverviewComponent },
@@ -25,6 +36,5 @@ export const routes: Routes = [
         { path: '', component: DetailSkillComponent, outlet: 'modal' }
       ]}
     ]
-  },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+  }
 ];

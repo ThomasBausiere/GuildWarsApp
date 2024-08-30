@@ -1,0 +1,20 @@
+<div class="center-container">
+    <h2>Inscription</h2>
+    <form action="php/register.php" method="post">
+        <div class="content">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required><br>
+        </div>
+        <div class="content">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br>
+        </div>
+        <div class="content">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required><br>
+        </div>
+        <input type="submit" value="S'inscrire">
+        <a (click)="goToLoginPage()">déjà inscrit?</a>
+        <div id="message"></div>
+    </form>
+    </div>

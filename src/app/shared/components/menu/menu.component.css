@@ -1,17 +1,14 @@
 .bottommenu {
     position: absolute;
-    top:0;
-    right: 0;
-    
-    z-index: 10; /* pour s'assurer que le menu est au-dessus des autres éléments */
-    
-
+    bottom:0;
+    left: 0;    
+    z-index: 10;
   }
   
   .button-57 {
     position: relative;
     overflow: hidden;
-    border: 1px solid #c5c0bd; /* couleur de la bordure modifiée */
+    border: 1px solid #c5c0bd; 
     color: #c5c0bd; /* couleur du texte modifiée */
     display: inline-block;
     font-size: 15px;
