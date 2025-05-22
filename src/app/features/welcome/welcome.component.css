@@ -1,0 +1,11 @@
+section{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.content{
+    display: flex;
+    width: fit-content;
+}

@@ -8,10 +8,13 @@ import { TitlePageComponent } from '../../../../core/components/title-page/title
 import { DetailSkillComponent } from '../../../../core/components/detail-skill/detail-skill.component';
 import { RouterOutlet } from '@angular/router';
 import { GameToTComponent } from '../../../GameToT/game-to-t/game-to-t.component';
-import { PersonnageComponent } from '../../../personnage/personnage/personnage.component';
+import { PersonnageComponent } from '../../../personnage/personnage.component';
 import { RessourcesComponent } from '../../../ressources/ressources.component';
 import { CompteComponent } from '../../../compte/compte/compte.component';
 import { Renderer2 } from '@angular/core';
+import { KamadanComponent } from '../../../kamadan/kamadan.component';
+import { WelcomeComponent } from '../../../welcome/welcome.component';
+import { SkillhunterComponent } from '../../../skillhunter/skillhunter.component';
 
 @Component({
   selector: 'app-homepage',
@@ -24,7 +27,8 @@ import { Renderer2 } from '@angular/core';
     MenuComponent,
     TitlePageComponent,
     DetailSkillComponent,
-    RouterOutlet
+    RouterOutlet,
+    
   ],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
@@ -50,7 +54,7 @@ export class HomepageComponent implements AfterViewInit {
     const updateClass = () => {
       listItems.forEach((item: HTMLElement, index: number) => {
         item.classList.remove('selected', 'nearly-selected', 'not-selected');
-
+        
         if (index === this.confirmedIndex) {
           item.classList.add('selected');
         } else if (index === this.currentIndex) {
@@ -106,17 +110,19 @@ export class HomepageComponent implements AfterViewInit {
   getSelectedComponent() {
     switch (this.confirmedIndex) {
       case 0:
-        return GameToTComponent;
+        return WelcomeComponent;
       case 1:
-        return PersonnageComponent;
+        return GameToTComponent;
       case 2:
-        return RessourcesComponent;
+        return KamadanComponent;
       case 3:
-        return CompteComponent;
+        return DetailSkillComponent;
       case 4:
+        return CompteComponent;
+      case 5:
         return null; // Peut être utilisé pour une future fonctionnalité de déconnexion
       default:
-        return null;
+        return WelcomeComponent;
     }
   }
 }

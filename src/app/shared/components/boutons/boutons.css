@@ -1,0 +1,58 @@
+.buttonStyle{
+    width: 30vh; /* fixe la largeur */
+    height: 10vh; /* fixe la hauteur */
+    text-align: center; /* pour centrer le texte */
+    line-height: center; /* pour centrer verticalement le texte */
+    align-self: center;
+    margin: 0.1rem;
+    background-color: rgba(48, 34, 34, 0.705); /* Couleur de fond modifiée */
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #c5c0bd; /* Couleur de police modifiée */
+    cursor: pointer;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;  
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .buttonStyle:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+  .buttonStyle:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+  
+  .buttonStyle  a:-webkit-any-link{
+    color:white;
+    text-decoration: none;
+  }
+
+  .buttonStyle  a:visited{
+    color:white;
+    text-decoration: none;
+  }
+
+  -webkit-any-link  {
+    text-decoration: white;
+    color: white;
+  }

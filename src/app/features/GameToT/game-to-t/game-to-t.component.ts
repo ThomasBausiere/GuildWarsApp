@@ -4,12 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-game-to-t',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      game-to-t works!
-    </p>
-  `,
-  styles: ``
+  templateUrl:'./game-to-t.component.html',
+  styleUrl:'./game-to-t.component.css'
 })
 export class GameToTComponent {
 

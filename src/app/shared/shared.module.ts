@@ -4,6 +4,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ProfilComponent } from './components/profile/profile.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { BoutonsComponent } from './components/boutons/boutons.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,15 @@ import { MenuComponent } from './components/menu/menu.component';
     SearchBarComponent,
     SearchResultComponent,
     ProfilComponent,
-    MenuComponent
+    MenuComponent,
+    BoutonsComponent
   ],
   exports: [
     SearchBarComponent,
     SearchResultComponent,
     ProfilComponent,
-    MenuComponent
+    MenuComponent,
+    BoutonsComponent
   ]
 })
 export class SharedModule { }
