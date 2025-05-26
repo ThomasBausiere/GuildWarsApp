@@ -116,7 +116,7 @@ export class HomepageComponent implements AfterViewInit {
       case 2:
         return KamadanComponent;
       case 3:
-        return DetailSkillComponent;
+        return SkillhunterComponent;
       case 4:
         return CompteComponent;
       case 5:

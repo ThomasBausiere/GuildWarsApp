@@ -1,6 +1,6 @@
 .buttonStyle{
-    width: 30vh; /* fixe la largeur */
-    height: 10vh; /* fixe la hauteur */
+    max-width: 30vh; /* fixe la largeur */
+    max-height: 10vh; /* fixe la hauteur */
     text-align: center; /* pour centrer le texte */
     line-height: center; /* pour centrer verticalement le texte */
     align-self: center;
@@ -19,7 +19,7 @@
     cursor: pointer;
     display: inline-block;
     font-family: Neucha, sans-serif;
-    font-size: 1rem;  
+    font-size: 12px;  
     outline: none;
     padding: .75rem;
     text-decoration: none;

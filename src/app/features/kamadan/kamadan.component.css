@@ -1,5 +1,13 @@
 .kamachat {
     width: 100%;
     min-height: 60%;
-    object-position:-20px -10%;
+    height: 75%;
+    zoom: 0.66;
+    -moz-transform:scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    /* -webkit-transform: scale(0.75); */
+    -webkit-transform-origin: 0 0;
+    opacity: 1;
 }
