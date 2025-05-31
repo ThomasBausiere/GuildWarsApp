@@ -1,19 +1,34 @@
-#content .app-welcome {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+:host {
+  display: block;
   height: 100%;
   width: 100%;
 }
 
-#content app-welcome .section {
-  flex: 1;
-  width: 100%;
-  /* optionnel : ajouter un min-height si besoin */
+.welcome_component{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+.section{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+.content > * {
+  margin-right: 10px;
+}
 .content{
   height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  
 }
+
 
