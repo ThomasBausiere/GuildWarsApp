@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './features/auth/login/login.component';
 import { CreateCharacterComponent } from './features/auth/character/create-character/create-character.component';
-import { HomepageComponent } from './features/auth/home/homepage/homepage.component';
+import { HomepageComponent } from './layout/homepage.component';
 import { OverviewComponent } from './features/auth/overview/overview.component';
 import { SettingsComponent } from './features/auth/settings/settings.component';
 import { ListSkillComponent } from './core/components/list-skills/list-skills.component';
@@ -9,6 +9,7 @@ import { DetailSkillComponent } from './core/components/detail-skill/detail-skil
 import { SearchResultComponent } from './shared/components/search-result/search-result.component';
 import { MainComponent } from './core/components/main/main.component';
 import { RessourcesComponent } from './features/ressources/ressources.component';
+import { ProphecieComponent } from './features/Game/coop/prophecie/prophecie.component';
 
 export const routes: Routes = [
   { 

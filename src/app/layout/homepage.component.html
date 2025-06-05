@@ -1,0 +1,24 @@
+<div class="homepage">
+  <div class="left-content">     
+    <nav class="menu">
+      <ul #menuList id="menuList">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Game</a></li>
+        <li><a href="#">Kamadan</a></li>
+        <li><a href="#">Skill Hunter</a></li>
+        <!-- <li><a href="#" data-content="deconnexion">Déconnexion</a></li> -->
+      </ul>
+    </nav>
+  </div>
+  <div class="right-content">
+    <div id="content">
+<ng-container *ngIf="viewService.currentView as selectedComponent">
+  <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+</ng-container>
+    </div>
+  </div>
+
+  <router-outlet name="modal"></router-outlet>
+</div>
+
+

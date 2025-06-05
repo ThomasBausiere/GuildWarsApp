@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: url('../../../../../../public/assets/images/BG_warrior.jpg');
+    background-image: url('./../../../public/assets/images/BG_warrior.jpg');
     background-color: black;
     background-size: 100% auto; 
     background-repeat: no-repeat; 

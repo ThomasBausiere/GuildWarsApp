@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomepageComponent } from '../../../features/auth/home/homepage/homepage.component';
+import { HomepageComponent } from '../../../layout/homepage.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({

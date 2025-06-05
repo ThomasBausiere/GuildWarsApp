@@ -1,20 +1,25 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
-import { SearchResultComponent } from '../../../../shared/components/search-result/search-result.component';
-import { ProfilComponent } from '../../../../shared/components/profile/profile.component';
-import { MenuComponent } from '../../../../shared/components/menu/menu.component';
-import { TitlePageComponent } from '../../../../core/components/title-page/title-page.component';
-import { DetailSkillComponent } from '../../../../core/components/detail-skill/detail-skill.component';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import {
+  CommonModule,
+  isPlatformBrowser
+} from '@angular/common';
+
+import { SearchBarComponent } from './../shared/components/search-bar/search-bar.component';
+import { SearchResultComponent } from './../shared/components/search-result/search-result.component';
+import { ProfilComponent } from './../shared/components/profile/profile.component';
+import { MenuComponent } from './../shared/components/menu/menu.component';
+import { TitlePageComponent } from './../core/components/title-page/title-page.component';
+import { DetailSkillComponent } from './../core/components/detail-skill/detail-skill.component';
 import { RouterOutlet } from '@angular/router';
-import { GameToTComponent } from '../../../GameToT/game-to-t/game-to-t.component';
-import { PersonnageComponent } from '../../../personnage/personnage.component';
-import { RessourcesComponent } from '../../../ressources/ressources.component';
-import { CompteComponent } from '../../../compte/compte/compte.component';
 import { Renderer2 } from '@angular/core';
-import { KamadanComponent } from '../../../kamadan/kamadan.component';
-import { WelcomeComponent } from '../../../welcome/welcome.component';
-import { SkillhunterComponent } from '../../../skillhunter/skillhunter.component';
+import { ViewService } from './../core/services/view.service';
 
 @Component({
   selector: 'app-homepage',
@@ -27,34 +32,37 @@ import { SkillhunterComponent } from '../../../skillhunter/skillhunter.component
     MenuComponent,
     TitlePageComponent,
     DetailSkillComponent,
-    RouterOutlet,
-    
+    RouterOutlet
   ],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements AfterViewInit {
   @ViewChild('menuList') menuList!: ElementRef;
-  currentIndex: number = 0;
+  currentIndex = 0;
   confirmedIndex: number | null = null;
   isBrowser: boolean;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public viewService: ViewService
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    this.viewService.setView('welcome'); // Affichage par défaut
   }
 
   ngAfterViewInit(): void {
     if (!this.isBrowser) return;
 
-    const listItems: HTMLElement[] = Array.from(this.menuList.nativeElement.querySelectorAll('li'));
+    const listItems: HTMLElement[] = Array.from(
+      this.menuList.nativeElement.querySelectorAll('li')
+    );
 
     const updateClass = () => {
       listItems.forEach((item: HTMLElement, index: number) => {
         item.classList.remove('selected', 'nearly-selected', 'not-selected');
-        
+
         if (index === this.confirmedIndex) {
           item.classList.add('selected');
         } else if (index === this.currentIndex) {
@@ -72,7 +80,6 @@ export class HomepageComponent implements AfterViewInit {
 
     updateClass();
 
-    // Utilisation de Renderer2 pour écouter les événements de manière sécurisée
     this.renderer.listen('window', 'keydown', (e: KeyboardEvent) => {
       if (e.key === 'ArrowUp') {
         this.currentIndex = (this.currentIndex - 1 + listItems.length) % listItems.length;
@@ -80,6 +87,7 @@ export class HomepageComponent implements AfterViewInit {
         this.currentIndex = (this.currentIndex + 1) % listItems.length;
       } else if (e.key === 'Enter') {
         this.confirmedIndex = this.currentIndex === this.confirmedIndex ? null : this.currentIndex;
+        this.updateViewFromIndex();
       }
       updateClass();
     });
@@ -100,29 +108,32 @@ export class HomepageComponent implements AfterViewInit {
       });
 
       this.renderer.listen(item, 'click', (event: MouseEvent) => {
-        event.preventDefault(); // Empêcher l'action par défaut du lien
+        event.preventDefault();
         this.confirmedIndex = index;
+        this.updateViewFromIndex();
         updateClass();
       });
     });
   }
 
-  getSelectedComponent() {
+  updateViewFromIndex() {
     switch (this.confirmedIndex) {
       case 0:
-        return WelcomeComponent;
+        this.viewService.setView('welcome');
+        break;
       case 1:
-        return GameToTComponent;
+        this.viewService.setView('game');
+        break;
       case 2:
-        return KamadanComponent;
+        this.viewService.setView('kamadan');
+        break;
       case 3:
-        return SkillhunterComponent;
-      case 4:
-        return CompteComponent;
-      case 5:
-        return null; // Peut être utilisé pour une future fonctionnalité de déconnexion
+        this.viewService.setView('skillhunter');
+        break;
       default:
-        return WelcomeComponent;
+        this.viewService.setView('welcome');
+        break;
     }
   }
 }
+
